@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>When does next period end?</title>
+  <style>
+		.centered
+		{
+			text-align: center;
+		}
+
+	</style>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css
+" rel="stylesheet">
+	<link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+  <h1 id="time" class="centered">Hello, world</h1>
+  <p class="centered">Made by Siddhu Guggilam (No stealing)</p>
+  <script>
+		let today = new Date();
+		let hours = today.getHours();
+		let minutes = today.getMinutes();
+		let text = document.getElementById("time");
+		// text.innerHTML = hours + ":" + minutes;
+		// console.log(text)
+		if ((hours < 9) || (hours == 9 && minutes < 42))
+		{
+			let h = 9 - hours;
+			let m = 42 - minutes;
+			if (m < 0)
+			{
+				h--;
+				m += 60;
+			}
+			text.innerHTML = h + " hours " + m + " minutes till 1/2 period ends.";
+		}
+		else if ((hours < 11) || (hours == 11 && minutes < 15))
+		{
+			let h = 11 - hours;
+			let m = 15 - minutes;
+			if (m < 0)
+			{
+				h--;
+				m += 60;
+			}
+			text.innerHTML = h + " hours " + m + " minutes till 3/4 period ends. ";
+			if ((hours < 10) || (hours == 10 && minutes < 29))
+			{
+				let h2 = 10 - hours;
+				let m2 = 29 - minutes;
+				if (m2 < 0)
+				{
+					h2--;
+					m2 += 60;
+				}
+				text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till Rotation 1 ends.";
+			}
+			else
+			{
+				text.innerHTML = text.innerHTML + "Rotation 2 will end at the same time. ";
+			}
+		}
+		else if ((hours < 13) || (hours == 13 && minutes < 22))
+		{
+			let h = 13 - hours;
+			let m = 22 - minutes;
+			if (m < 0)
+			{
+				h--;
+				m += 60;
+			}
+			text.innerHTML = h + " hours " + m + " minutes till 5/6 period ends. ";
+			if ((hours < 12) || (hours == 12 && minutes < 20))
+			{
+				let h2 = 12 - hours;
+				let m2 = 20 - minutes;
+				if (m2 < 0)
+				{
+					h2--;
+					m2 += 60;
+				}
+				text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till C lunch starts. "
+			}
+			if ((hours < 12) || (hours == 12 && minutes < 52))
+			{
+				let h2 = 12 - hours;
+				let m2 = 52 - minutes;
+				if (m2 < 0)
+				{
+					h2--;
+					m2 += 60;
+				}
+				text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till D lunch starts. "
+			}
+		}
+		else if ((hours < 14) || (hours == 14 && minutes < 55))
+		{
+			let h = 14 - hours;
+			let m = 55 - minutes;
+			if (m < 0)
+			{
+				h--;
+				m += 60;
+			}
+			text.innerHTML = h + " hours " + m + " minutes till 7/8 period ends.";
+		}
+		else
+		{
+			text.innerHTML = "School is over!";
+		}
+	</script>
+</body>
+
+</html>
