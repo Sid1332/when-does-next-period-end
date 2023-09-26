@@ -104,6 +104,17 @@
 				m += 60;
 			}
 			text.innerHTML = h + " hours " + m + " minutes till 5/6 period ends. ";
+			if ((hours < 11) || (hours == 11 && minutes < 48))
+			{
+				let h2 = 11 - hours;
+				let m2 = 48 - minutes;
+				if (m2 < 0)
+				{
+					h2--;
+					m2 += 60;
+				}
+				text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till 2nd lunch starts. "
+			}
 			if ((hours < 12) || (hours == 12 && minutes < 20))
 			{
 				let h2 = 12 - hours;
@@ -113,7 +124,7 @@
 					h2--;
 					m2 += 60;
 				}
-				text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till C lunch starts. "
+				text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till 3rd lunch starts. "
 			}
 			if ((hours < 12) || (hours == 12 && minutes < 52))
 			{
@@ -124,7 +135,7 @@
 					h2--;
 					m2 += 60;
 				}
-				text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till D lunch starts. "
+				text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till 4th lunch starts. "
 			}
 		}
 		else if ((hours < 14) || (hours == 14 && minutes < 55))
