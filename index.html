@@ -34,6 +34,9 @@
 					<li class="nav-item">
 						<a class="nav-link active" href="next.html">When does next period start?</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="lunches.html">Set lunches</a>
+					</li>
 				</ul>
 				<form class="d-flex" role="search" method="get" action="./lookup.html">
 					<input class="form-control me-2" type="time" placeholder="Time" aria-label="Search" name="time">
@@ -51,6 +54,18 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
    <script>
+		if (document.cookie == "") 
+		{
+			let second = true
+			let third = true
+			let fourth = true
+		} 
+		else
+		{ 
+			let second = document.cookie.split(";")[1].split("=")[1] == "true";
+			let third = document.cookie.split(";")[2].split("=")[1] == "true";
+			let fourth = document.cookie.split(";")[3].split("=")[1] == "true";
+		}
 		function checkTime() 
 		{
 			let today = new Date();
@@ -106,7 +121,7 @@
 					m += 60;
 				}
 				text.innerHTML = h + " hours " + m + " minutes till 5/6 period ends. ";
-				if ((hours < 11) || (hours == 11 && minutes < 48))
+				if (((hours < 11) || (hours == 11 && minutes < 48)) && second)
 				{
 					let h2 = 11 - hours;
 					let m2 = 48 - minutes;
@@ -117,7 +132,7 @@
 					}
 					text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till 2nd lunch starts. "
 				}
-				if ((hours < 12) || (hours == 12 && minutes < 20))
+				if (((hours < 12) || (hours == 12 && minutes < 20)) && third)
 				{
 					let h2 = 12 - hours;
 					let m2 = 20 - minutes;
@@ -128,7 +143,7 @@
 					}
 					text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till 3rd lunch starts. "
 				}
-				if ((hours < 12) || (hours == 12 && minutes < 52))
+				if (((hours < 12) || (hours == 12 && minutes < 52)) && fourth)
 				{
 					let h2 = 12 - hours;
 					let m2 = 52 - minutes;
