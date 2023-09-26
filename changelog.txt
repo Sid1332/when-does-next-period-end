@@ -10,3 +10,9 @@ Changelog
 2.1
     Program now shows first and second lunches
     Added changelog.txt
+------------------
+2.2
+    Program will update without a refresh
+    Fixed Bugs
+        Incapable of accessing next.html from lookup.html
+        Removed unnessesary function
