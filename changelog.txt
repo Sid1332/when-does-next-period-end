@@ -1,0 +1,12 @@
+Changelog
+------------------
+1.0
+    Created
+------------------
+2.0
+    Added navbar
+    Added next.html, lookup.html
+------------------
+2.1
+    Program now shows first and second lunches
+    Added changelog.txt
