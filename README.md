@@ -10,4 +10,4 @@ This program uses Bootstrap! See them Here: https://www.getbootstrap.com/
 --------------------------------------------------------------------------------------
  
 
-Note: Program will not show A and B lunches. This will come in another update!
+Note: Program will not show 1st lunch when looking for when next period ends. This may come in another update!
