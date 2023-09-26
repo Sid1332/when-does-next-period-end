@@ -15,4 +15,9 @@ Changelog
     Program will update without a refresh
     Fixed Bugs
         Incapable of accessing next.html from lookup.html
-        Removed unnessesary function
+        Unessesary function
+------------------
+3.0
+    Added lunches.html
+    index will only show selected lunches 
+    Edited change log to make 2.2 bugs clear
