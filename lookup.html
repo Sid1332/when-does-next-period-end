@@ -20,7 +20,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="index.html">
 				<img src="logo.png" alt="logo" height="30">
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,68 +61,34 @@
         }
 		else if (((hours > 8) || (hours == 8 && minutes > 10)) && ((hours < 9) || (hours == 9 && minutes < 42)))
 		{
-			let h = 8 - hours;
-			let m = 10 - minutes;
-			if (m < 0)
-			{
-				h--;
-				m += 60;
-			}
 			text.innerHTML = "During 1/2 period.";
 		}
-		else if (((hours > 9) || (hours == 9 && minutes > 50)) && ((hours < 9) || (hours == 9 && minutes < 50)))
+		else if (((hours > 9) || (hours == 9 && minutes > 50)) && ((hours < 11) || (hours == 11 && minutes < 15)))
 		{
-			let h = 9 - hours;
-			let m = 50 - minutes;
-			if (m < 0)
-			{
-				h--;
-				m += 60;
-			}
 			text.innerHTML = "During 3/4 period.";
 		}
 		else if (((hours > 11) || (hours == 11 && minutes > 23)) && ((hours < 13) || (hours == 13 && minutes < 22)))
 		{
-			let h = 11 - hours;
-			let m = 23 - minutes;
-			if (m < 0)
-			{
-				h--;
-				m += 60;
-			}
 			text.innerHTML = "During 5/6 period. ";
+            if (((hours > 11) || (hours == 11 && minutes > 16)) && ((hours < 11) || (hours == 11 && minutes < 46)))
+            {
+                text.innerHTML = text.innerHTML + "During 1st Lunch."
+            }
+            if (((hours > 11) || (hours == 11 && minutes > 48)) && ((hours < 12) || (hours == 12 && minutes < 18)))
+			{
+				text.innerHTML = text.innerHTML + "During 2nd Lunch."
+			}
             if (((hours > 12) || (hours == 12 && minutes > 20)) && ((hours < 12) || (hours == 12 && minutes < 52)))
 			{
-				let h2 = 12 - hours;
-				let m2 = 20 - minutes;
-				if (m2 < 0)
-				{
-					h2--;
-					m2 += 60;
-				}
 				text.innerHTML = text.innerHTML + "During C Lunch.";
             }
 			if (((hours > 12) || (hours == 12 && minutes > 52)) && ((hours < 13) || (hours == 13 && minutes < 22)))
 			{
-				let h2 = 12 - hours;
-				let m2 = 52 - minutes;
-				if (m2 < 0)
-				{
-					h2--;
-					m2 += 60;
-				}
 				text.innerHTML = text.innerHTML + "During D Lunch.";
 			}
 		}
 		else if (((hours > 13) || (hours == 13 && minutes > 30)) && ((hours < 14) || (hours == 14 && minutes < 55)))
 		{
-			let h = 13 - hours;
-			let m = 30 - minutes;
-			if (m < 0)
-			{
-				h--;
-				m += 60;
-			}
 			text.innerHTML = "During 7/8 period.";
 		}
 		else if ( ((hours > 14) || (hours == 14 && minutes > 55)))
