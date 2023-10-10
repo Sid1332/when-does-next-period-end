@@ -60,11 +60,6 @@
 			let hours = today.getHours();
 			let minutes = today.getMinutes();
 			let text = document.getElementById("time");
-
-			let first = document.cookie.split(";")[0].split("=")[1] == "true";
-			let second = document.cookie.split(";")[1].split("=")[1] == "true";
-			let third = document.cookie.split(";")[2].split("=")[1] == "true";
-			let fourth = document.cookie.split(";")[3].split("=")[1] == "true";
 			// text.innerHTML = hours + ":" + minutes;
 			// console.log(text)
 			if ((hours < 8) || (hours == 8 && minutes < 10))
