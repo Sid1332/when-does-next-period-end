@@ -21,3 +21,10 @@ Changelog
     Added lunches.html
     index will only show selected lunches 
     Edited change log to make 2.2 bugs clear
+------------------
+3.1
+    lunches.html will redirect to index.html on form submit
+    Fixed Bugs
+        Cookies not reading correctly in index.html
+        Unused function in lunches.html
+        Unused variables in next.html
