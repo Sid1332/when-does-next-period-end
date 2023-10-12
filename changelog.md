@@ -35,3 +35,4 @@
 - Removed `#` that appears at the end of the URL when you use navbar to go to the pafge you are currently at.
 - Updated `README.md` with new Markdown Syntax knowledge
 - Updated `README.md` with info on how to access previous versions
+- Changed title of `lunches.html` to `Set Luches.`
