@@ -126,7 +126,7 @@
 					m += 60;
 				}
 				text.innerHTML = h + " hours " + m + " minutes till 5/6 period ends. ";
-				if (((hours < 11) || (hours == 11 && minutes < 48)) && second)
+				if (((hours < 11) || (hours == 11 && minutes < 48)) && cookies.second)
 				{
 					let h2 = 11 - hours;
 					let m2 = 48 - minutes;
@@ -137,7 +137,7 @@
 					}
 					text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till 2nd lunch starts. "
 				}
-				if (((hours < 12) || (hours == 12 && minutes < 20)) && third)
+				if (((hours < 12) || (hours == 12 && minutes < 20)) && cookies.third)
 				{
 					let h2 = 12 - hours;
 					let m2 = 20 - minutes;
@@ -148,7 +148,7 @@
 					}
 					text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till 3rd lunch starts. "
 				}
-				if (((hours < 12) || (hours == 12 && minutes < 52)) && fourth)
+				if (((hours < 12) || (hours == 12 && minutes < 52)) && cookkies.fourth)
 				{
 					let h2 = 12 - hours;
 					let m2 = 52 - minutes;
