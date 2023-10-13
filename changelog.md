@@ -36,3 +36,6 @@
 - Updated `README.md` with new Markdown Syntax knowledge
 - Updated `README.md` with info on how to access previous versions
 - Changed title of `lunches.html` to `Set Luches.`
+------------------
+### 3.3
+- Fixed a problem where lunches will not show no matter what.
