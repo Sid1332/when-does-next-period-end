@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>When does next period end?</title>
+  <style>
+		.centered
+		{
+			text-align: center;
+		}
+
+	</style>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css
+" rel="stylesheet">
+	<link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="">
+				<img src="logo.png" alt="logo" height="30">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav me-auto mb2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" href="index.html">When does this period end?</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="next.html">When does next period start?</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="">Set Schedule.</a>
+					</li>
+				</ul>
+				<form class="d-flex" role="search" method="get" action="./lookup.html">
+					<input class="form-control me-2" type="time" placeholder="Time" aria-label="Search" name="time">
+					<button class="btn btn-outline-success" type="submit">Find</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+	<form onsubmit="setCookie(event);">
+		<table id="table">
+			<th>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>Period / Lunch</td>
+					<td>Start Time</td>
+					<td>End time</td>
+				</tr>
+			</th>
+			<tb>
+				<tr id="1" class="info">
+					<td></td>
+					<td><button onclick="newRow();" type="button">+</button></td>
+					<td><input type="text" name="1N" id="1N" placeholder="Name"></td>
+					<td><input type="time" name="1S" id="1S"></td>
+					<td><input type="time" name="1E" id="1E"></td>
+				</tr>
+			</tb>
+		</table>
+		<button type="submit">Submit</button>
+	</form>
+
+    <p class="centered">Made by Siddhartha Guggilam (No stealing)</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+		let count = 1;
+		function newRow() {
+			count++;
+			let tableBody = document.getElementById("table")
+			let row = tableBody.insertRow(-1);
+			row.id = count + "";
+			row.class = "info";
+			let data1 = row.insertCell(-1);
+			let item1 = document.createElement("button");
+			item1.innerHTML = "-";
+			item1.onclick = function x() {row.remove();};
+			item1.type = "button"
+			data1.appendChild(item1);
+			let data2 = row.insertCell(-1);
+			let item2 = document.createElement("button");
+			item2.innerHTML = "+";
+			item2.onclick = function x() {newRow();};
+			item2.type = "button"
+			data2.appendChild(item2);
+			let data3 = row.insertCell(-1);
+			let item3 = document.createElement("input");
+			item3.type = "text";
+			item3.name = count + "N";
+			item3.id = item3.name;
+			item3.placeholder = "Name";
+			data3.appendChild(item3);
+			let data4 = row.insertCell(-1);
+			let item4 = document.createElement("input");
+			item4.type = "time";
+			item4.name = count + "S";
+			item4.id = item4.name;
+			data4.appendChild(item4);
+			let data5 = row.insertCell(-1);
+			let item5 = document.createElement("input");
+			item5.type = "time";
+			item5.name = count + "E";
+			item5.id = item5.name;
+			data5.appendChild(item5);
+		}
+		
+		function setCookie(event) {
+			let inputs = document.getElementsByTagName("input");
+			let str = "";
+			for (let i = 0; i < inputs.length; i++) 
+			{
+				document.cookie = inputs[i].id + "=" + inputs[i].value;
+			}
+			window.location = "./index.html";
+			event.preventDefault();
+		}
+    </script>
+</body>
+
+</html>
