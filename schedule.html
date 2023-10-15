@@ -117,6 +117,14 @@
 		}
 		
 		function setCookie(event) {
+			// Removing old cookies
+			let cookiesList = document.cookie.split("; ");
+			for (let i = 0; i < cookiesList.length; i++)
+			{
+				document.cookie = cookiesList[i].split("=")[0] + "=; expires=Sun, 31 Dec 1999 00:00:00 GMT"
+			}
+
+			// Setting up new cookies
 			let inputs = document.getElementsByTagName("input");
 			let str = "";
 			for (let i = 0; i < inputs.length; i++) 
