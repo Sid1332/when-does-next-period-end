@@ -54,24 +54,27 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
    <script>
+	   	let periods = {};
+		if (document.cookie == "") 
+		{
+			window.location = "./schedule.html"
+		} 
+		else
+		{
+			let cookiesList = document.cookie.split("; ");
+			for (i in cookiesList)
+			{
+				periods[cookiesList[i].split("=")[0].split("")[0]] = {};	
+			}
+			for (i in cookiesList)
+			{
+				periods[cookiesList[i].split("=")[0].split("")[0]][cookiesList[i].split("=")[0].split("")[1]] = cookiesList[i].split("=")[1];
+			}	
+		}
+	   	console.log(periods);
 		function checkTime() 
 		{
-			let cookies = {};
-			if (document.cookie == "") 
-			{
-				cookies.first = true;
-				cookies.second = true;
-				cookies.third = true;
-				cookies.fourth = true;
-			} 
-		   	else
-			{
-				let cookiesList = document.cookie.split("; ");
-				for (i in cookiesList)
-				{
-				    cookies[cookiesList[i].split("=")[0]] = cookiesList[i].split("=")[1] == 'true';
-				}
-			}
+			
 			
 			let today = new Date();
 			let hours = today.getHours();
