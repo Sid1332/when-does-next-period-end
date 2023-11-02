@@ -39,3 +39,6 @@
 ------------------
 ### 3.3
 - Fixed a problem where lunches will not show no matter what.
+------------------
+### 3.4
+- Fixed `lookup.html`. It was completely dysfunctional.
