@@ -54,82 +54,54 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
    <script>
-		function checkTime() 
+		let text = document.getElementById("time");
+        let params = new URLSearchParams(window.location.search);
+		let hours = parseInt(params.get("time").split(":")[0]);
+		let minutes = parseInt(params.get("time").split(":")[1]);
+		if ((hours < 8) || (hours == 8 && minutes < 10))
+        {
+            text.innerHTML = "School hasn't started yet.";
+        }
+		else if (((hours > 8) || (hours == 8 && minutes > 10)) && ((hours < 9) || (hours == 9 && minutes < 42)))
 		{
-			let today = new Date();
-			let hours = today.getHours();
-			let minutes = today.getMinutes();
-			let text = document.getElementById("time");
-			// text.innerHTML = hours + ":" + minutes;
-			// console.log(text)
-			if ((hours < 8) || (hours == 8 && minutes < 10))
+			text.innerHTML = "During 1/2 period.";
+		}
+		else if (((hours > 9) || (hours == 9 && minutes > 50)) && ((hours < 11) || (hours == 11 && minutes < 15)))
+		{
+			text.innerHTML = "During 3/4 period.";
+		}
+		else if (((hours > 11) || (hours == 11 && minutes > 23)) && ((hours < 13) || (hours == 13 && minutes < 22)))
+		{
+			text.innerHTML = "During 5/6 period. ";
+            if (((hours > 11) || (hours == 11 && minutes > 16)) && ((hours < 11) || (hours == 11 && minutes < 46)))
+            {
+                text.innerHTML = text.innerHTML + "During 1st Lunch."
+            }
+            if (((hours > 11) || (hours == 11 && minutes > 48)) && ((hours < 12) || (hours == 12 && minutes < 18)))
 			{
-				let h = 8 - hours;
-				let m = 10 - minutes;
-				if (m < 0)
-				{
-					h--;
-					m += 60;
-				}
-				text.innerHTML = h + " hours " + m + " minutes till 1/2 period starts.";
+				text.innerHTML = text.innerHTML + "During 2nd Lunch."
 			}
-			else if ((hours < 9) || (hours == 9 && minutes < 50))
+            if (((hours > 12) || (hours == 12 && minutes > 20)) && ((hours < 12) || (hours == 12 && minutes < 52)))
 			{
-				let h = 9 - hours;
-				let m = 50 - minutes;
-				if (m < 0)
-				{
-					h--;
-					m += 60;
-				}
-				text.innerHTML = h + " hours " + m + " minutes till 3/4 period starts. ";
-				if ((hours < 10) || (hours == 10 && minutes < 36))
-				{
-					let h2 = 10 - hours;
-					let m2 = 36 - minutes;
-					if (m2 < 0)
-					{
-						h2--;
-						m2 += 60;
-					}
-					text.innerHTML = text.innerHTML + h2 + " hours " + m2 + " minutes till Rotation 2 starts.";
-				}
-				else
-				{
-					text.innerHTML = text.innerHTML + "Rotation 1 will start at the same time. ";
-				}
-			}
-			else if ((hours < 11) || (hours == 11 && minutes < 23))
+				text.innerHTML = text.innerHTML + "During C Lunch.";
+            }
+			if (((hours > 12) || (hours == 12 && minutes > 52)) && ((hours < 13) || (hours == 13 && minutes < 22)))
 			{
-				let h = 11 - hours;
-				let m = 23 - minutes;
-				if (m < 0)
-				{
-					h--;
-					m += 60;
-				}
-				text.innerHTML = h + " hours " + m + " minutes till 5/6 period starts. ";
-			}
-			else if ((hours < 13) || (hours == 13 && minutes < 30))
-			{
-				let h = 13 - hours;
-				let m = 30 - minutes;
-				if (m < 0)
-				{
-					h--;
-					m += 60;
-				}
-				text.innerHTML = h + " hours " + m + " minutes till 7/8 period starts.";
-			}
-			else
-			{
-				text.innerHTML = "School is over or you are in period seven!";
+				text.innerHTML = text.innerHTML + "During D Lunch.";
 			}
 		}
-
-		checkTime()
-
-		setInterval(checkTime, 5000)
+		else if (((hours > 13) || (hours == 13 && minutes > 30)) && ((hours < 14) || (hours == 14 && minutes < 55)))
+		{
+			text.innerHTML = "During 7/8 period.";
+		}
+		else if ( ((hours > 14) || (hours == 14 && minutes > 55)))
+		{
+			text.innerHTML = "School is over!";
+		}
+        else 
+        {
+            text.innerHTML = "Between periods!"
+        }
 	</script>
 </body>
 
