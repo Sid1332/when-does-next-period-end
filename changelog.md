@@ -54,3 +54,6 @@
 - Fixed title of `lookup.html`
 - Fixed mispelling in `lunches.html`
 - Added Google Analytics to `index.html`
+------------------
+### 3.6.1
+- Incorrect commit name fixed.
