@@ -49,3 +49,8 @@
 - Fixed a bug where you could not go directly to `next.html` from `lookup.html`
 - Removed the note from `README.md`
 - Added cookie alert to `lunches.html`
+------------------
+### 3.6
+- Fixed title of `lookup.html`
+- Fixed mispelling in `lunches.html`
+- Added Google Analytics to `index.html`
